@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:42:44 by tschlege          #+#    #+#             */
-/*   Updated: 2021/12/02 13:24:42 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2021/12/02 17:03:11 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd, int *len);
 void	ft_putstr_fd(char	*s, int fd, int *len);
 void	ft_putendl_fd(char	*s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int n, int fd, int *len);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -65,5 +65,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(f)(void *), void (*del)(void *));
+void	ft_putunsgnbr_fd(unsigned int n, int fd, int *len);
 
 #endif

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunsgnbr_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 19:28:30 by tschlege          #+#    #+#             */
-/*   Updated: 2021/12/02 16:56:51 by tschlege         ###   ########lyon.fr   */
+/*   Created: 2021/12/02 16:49:09 by tschlege          #+#    #+#             */
+/*   Updated: 2021/12/02 17:18:43 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <assert.h>
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-# include "Libft/libft.h"
-
-int		ft_printf(const char *str, ...);
-
-#endif
+void	ft_putunsgnbr_fd(unsigned int n, int fd, int *len)
+{
+	if (n > 9)
+		ft_putunsgnbr_fd(n / 10, fd, len);
+	ft_putchar_fd((n % 10) + '0', fd, len);
+}
