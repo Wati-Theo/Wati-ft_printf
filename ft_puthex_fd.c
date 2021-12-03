@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putaddress_fd.c                                 :+:      :+:    :+:   */
+/*   ft_putHEX_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 11:29:17 by tschlege          #+#    #+#             */
-/*   Updated: 2021/12/03 11:34:06 by tschlege         ###   ########lyon.fr   */
+/*   Created: 2021/12/03 11:04:44 by tschlege          #+#    #+#             */
+/*   Updated: 2021/12/03 14:45:50 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putaddress_fd(unsigned long long int n, int fd, int *len)
+void	ft_puthex_fd(unsigned int n, int fd, int *len, int choice)
 {
-	char	*base;
+	char	*base1;
+	char	*base2;
 
-	base = "0123456789abcdef";
+	base1 = "0123456789abcdef";
+	base2 = "0123456789ABCDEF";
 	if (n > 15)
-		ft_putaddress_fd(n / 16, fd, len);
-	ft_putchar_fd(base[n % 16], fd, len);
+		ft_puthex_fd(n / 16, fd, len, choice);
+	if (choice == 1)
+		ft_putchar_fd(base1[n % 16], fd, len);
+	else if (choice == 2)
+		ft_putchar_fd(base2[n % 16], fd, len);
 }

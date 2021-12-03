@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 19:34:48 by tschlege          #+#    #+#             */
-/*   Updated: 2021/12/03 14:06:54 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2021/12/03 14:46:19 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,3 @@ int	ft_printf(const char *str, ...)
 	return (len);
 }
 
-int	main(void)
-{
-	int	len;
-
-	len = 0;
-	printf("\n%d\n", ft_printf("la lettre :%c et %c\n %%, %s 4 = %d, f= %x F= %X, &len: %p", 'u', 'e', NULL, 4, 15, 15, &len));
-	printf("\n%d\n", printf("la lettre :%c et %c\n %%, %s 4 = %d, f= %x F= %X, &len: %p", 'u', 'e', NULL, 4, 15, 15, &len));
-}

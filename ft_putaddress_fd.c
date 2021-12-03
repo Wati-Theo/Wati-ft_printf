@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putaddress_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 15:32:49 by tschlege          #+#    #+#             */
-/*   Updated: 2021/11/22 16:35:03 by tschlege         ###   ########lyon.fr   */
+/*   Created: 2021/12/03 11:29:17 by tschlege          #+#    #+#             */
+/*   Updated: 2021/12/03 14:45:49 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_putaddress_fd(unsigned long long int n, int fd, int *len)
 {
-	t_list	*new_list;
+	char	*base;
 
-	new_list = ft_calloc(1, sizeof(*new_list));
-	if (!new_list)
-		return (NULL);
-	new_list->content = content;
-	new_list->next = NULL;
-	return (new_list);
+	base = "0123456789abcdef";
+	if (n > 15)
+		ft_putaddress_fd(n / 16, fd, len);
+	ft_putchar_fd(base[n % 16], fd, len);
 }
