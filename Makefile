@@ -33,7 +33,8 @@ SRCFILES=	Libft/ft_putnbr_fd.c			\
 			Libft/ft_tolower.c			\
 			Libft/ft_toupper.c			\
 			Libft/ft_putunsgnbr_fd.c		\
-			Libft/ft_puthex_fd.c
+			Libft/ft_puthex_fd.c		\
+			Libft/ft_putaddress_fd.c
 
 BONUSFILES= Libft/ft_lstnew.c       \
 			Libft/ft_lstadd_front.c \
