@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:42:44 by tschlege          #+#    #+#             */
-/*   Updated: 2021/12/02 17:03:11 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2021/12/03 11:04:55 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(f)(void *), void (*del)(void *));
 void	ft_putunsgnbr_fd(unsigned int n, int fd, int *len);
+void	ft_puthex_fd(unsigned int n, int fd, int *len, int choice);
 
 #endif

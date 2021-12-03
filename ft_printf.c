@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 19:34:48 by tschlege          #+#    #+#             */
-/*   Updated: 2021/12/02 17:20:07 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2021/12/03 11:23:24 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ void	ft_wati_parsing(char c, va_list params, int *len)
 	else if (c == 'u')
 		ft_putunsgnbr_fd(va_arg(params, unsigned int), 1, len);
 	else if (c == 'x')
-		// printf("%x", va_arg(params, unsigned int));
+		ft_puthex_fd(va_arg(params, unsigned int), 1, len, 1);
+	else if (c == 'X')
+		ft_puthex_fd(va_arg(params, unsigned int), 1, len, 2);
 }
 
 int	ft_printf(const char *str, ...)
@@ -59,5 +61,5 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	printf("\n%d\n", ft_printf("la lettre :%c et %c\n %%, %s 4 = %d", 'u', 'e', "Wati", 4));
+	printf("\n%d\n", ft_printf("la lettre :%c et %c\n %%, %s 4 = %d, f= %x F= %X", 'u', 'e', "Wati", 4, 15, 15));
 }
