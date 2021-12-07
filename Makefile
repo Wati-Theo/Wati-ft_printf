@@ -1,16 +1,24 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/07 16:12:54 by tschlege          #+#    #+#              #
+#    Updated: 2021/12/07 16:21:24 by tschlege         ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
+
 SRCFILES=	ft_putnbr_fd.c			\
 			ft_putstr_fd.c			\
-			ft_putchar_fd.c	\
+			ft_putchar_fd.c			\
 			ft_putunsgnbr_fd.c		\
-			ft_puthex_fd.c		\
+			ft_puthex_fd.c			\
 			ft_putaddress_fd.c		\
-			ft_printf.c  
+			ft_printf.c
 
 HEADFILES=	ft_printf.h
-
-F= ${SRCFILES}
-
-O= ${F:.c=.o}
 
 OBJFILES= ${SRCFILES:.c=.o}
 
@@ -27,7 +35,7 @@ ${NAME}:	${OBJFILES}
 all: ${NAME}
 
 clean: 
-	${RM} ${OBJFILES} ${O}
+	${RM} ${OBJFILES}
 
 fclean: clean
 	${RM} ${NAME}
